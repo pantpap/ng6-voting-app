@@ -18,7 +18,7 @@ export class Article {
     }
 
     // utility function that extracts
-    // the domain from the URL
+    // the domain from the URL. This will cut the http:// from the url
     domain(): string {
         try {
             const domainAndPath: string = this.link.split('//')[1];
