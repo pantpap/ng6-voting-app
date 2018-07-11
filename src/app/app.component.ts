@@ -12,8 +12,10 @@ export class AppComponent {
   constructor() {
     this.articles = [
       new Article('Angular 6', 'http://angu;ar.io', 3),
-      new Article('Fullstack', 'http://fullstack.io', 2),
-      new Article('Angular Home page', 'http://angular.io', 1)
+      new Article('Fullstack', 'http://fullstack.io', 12),
+      new Article('Angular Home page', 'http://angular.io', 1),
+      new Article('Google', 'http://www.google.com', 2),
+      new Article('LinkedIn', 'http://linkedin.com', 10)
     ];
   }
   addArticle(title: HTMLInputElement, link: HTMLInputElement) {
@@ -22,5 +24,9 @@ export class AppComponent {
     title.value = '';
     link.value = '';
     return false;
+  }
+
+  sortedArticles(): Article[]{
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
   }
 }
